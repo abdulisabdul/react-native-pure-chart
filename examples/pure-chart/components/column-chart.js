@@ -117,12 +117,12 @@ export default class ColumnChart extends Component {
       for (let i = 0; i < this.state.sortedData.length; i++) {
         let series = this.state.sortedData[i]
         if (series.data[selectedIndex]['x']) {
-          tooltipRenders.push(<Text key={'tooltipTitle-' + i} style={styles.tooltipTitle}>{series.data[selectedIndex]['x']}</Text>)
+          tooltipRenders.push(<Text key={'tooltipTitle-' + i} style={[styles.tooltipTitle,{fontSize:14}]}>{series.data[selectedIndex]['x']}</Text>)
         }
         tooltipRenders.push(
           <View key={'tooltipText-' + i} style={{flexDirection: 'row', paddingLeft: 5, alignItems: 'center'}}>
             <View style={[styles.tooltipColor, {backgroundColor: !series.seriesColor ? this.props.primaryColor : series.seriesColor}]} />
-            <Text style={styles.tooltipValue}>{numberWithCommas(series.data[selectedIndex]['y'], false)}</Text>
+            <Text style={styles.tooltipValue}>{numberWithCommas(series.data[selectedIndex]['y'], false)} {this.props.customLabel}</Text>
           </View>
         )
       }
