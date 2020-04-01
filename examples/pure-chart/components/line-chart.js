@@ -292,7 +292,8 @@ class LineChart extends React.Component {
               return (
                 <View key={series.seriesName}>
                   {dataObject.x ? (
-                    <Text style={styles.tooltipTitle}>{dataObject.x}</Text>
+//                     <Text style={styles.tooltipTitle}>{dataObject.x}</Text>
+                  <Text style={{...styles.tooltipTitle,fontSize:14}}>{series.seriesName}</Text>
                 ) : null}
                   <View style={{flexDirection: 'row', paddingLeft: 5, alignItems: 'center'}}>
                     <View style={{
@@ -302,7 +303,7 @@ class LineChart extends React.Component {
                       borderRadius: 2,
                       backgroundColor: !series.seriesColor ? this.props.primaryColor : series.seriesColor
                     }} />
-                    <Text style={styles.tooltipValue}>{numberWithCommas(dataObject.y, false)}</Text>
+                    <Text style={styles.tooltipValue}>{numberWithCommas(dataObject.y, false)} {this.props.customLabel}</Text>
                   </View>
                 </View>
               )
