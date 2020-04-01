@@ -337,7 +337,7 @@ class LineChart extends React.Component {
               onContentSizeChange={() => {
                 if(this.props.lineChartScrollToEnd) this.scrollView.scrollToEnd({ animated: false });
               }}>
-              <View>
+              <View style={{paddingLeft:24,paddingBottom:20}}>
 
                 <View ref='chartView' style={styles.chartViewWrapper}>
 
