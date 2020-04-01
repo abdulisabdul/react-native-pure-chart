@@ -58,7 +58,7 @@ class LineChart extends React.Component {
     }
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     if (nextProps.data !== this.props.data) {
       this.setState(Object.assign({
         fadeAnim: new Animated.Value(0)
