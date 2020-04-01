@@ -339,7 +339,8 @@ export const drawXAxisLabels = (sortedData, gap, color = '#000000', showEvenNumb
     }}>
       {sortedData.map((data, i) => {
         // if (data[3] && i % 2 === 1) {
-        if (data['x'] && i % 2 === 1 || !showEvenNumberXaxisLabel) {
+        // if (data['x'] && i % 2 === 1 || !showEvenNumberXaxisLabel) {
+        if (data['x'] || !showEvenNumberXaxisLabel) {
           return (
             <View key={'label' + i} style={{
               position: 'absolute',
