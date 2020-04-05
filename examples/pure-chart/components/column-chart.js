@@ -118,7 +118,7 @@ export default class ColumnChart extends Component {
         let series = this.state.sortedData[i]
         if (series.data[selectedIndex]['x']) {
           // tooltipRenders.push(<Text key={'tooltipTitle-' + i} style={[styles.tooltipTitle,{fontSize:14}]}>{series.data[selectedIndex]['x']}</Text>)
-          tooltipRenders.push(<Text key={'tooltipTitle-' + i} style={[styles.tooltipTitle,{fontSize:14}]}>{series.seriesName}</Text>)
+          tooltipRenders.push(<Text key={'tooltipTitle-' + i} style={[styles.tooltipTitle,{fontSize:14,alignSelf:'flex-start',marginLeft:3}]}>{series.seriesName}</Text>)
         }
         tooltipRenders.push(
           <View key={'tooltipText-' + i} style={{flexDirection: 'row', paddingLeft: 5, alignItems: 'center'}}>
